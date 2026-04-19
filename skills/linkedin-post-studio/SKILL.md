@@ -7,6 +7,38 @@ description: Use when the user wants to create LinkedIn content — text posts, 
 
 Orchestrator for high-quality LinkedIn content. Dispatches to the right workflow, which loads only the references it needs. Every generation is filtered through Anti-AI constraints and the QA checklist before output.
 
+## Invocation modes
+
+- **Natural language** — User says "write me a LinkedIn post about X", "draft a carousel on Y", etc. Dispatch flow below handles the request.
+- **Slash command with no args** (`/linkedin-post-studio` alone) — Show the help/status screen (see below).
+- **Slash command with args** (`/linkedin-post-studio <request>`) — Treat as natural language and dispatch normally.
+
+### Help/status screen (when invoked with no args)
+
+When `$ARGUMENTS` is empty, show the user:
+
+1. **Active profile** — read `~/.claude/data/linkedin-post-studio/config.md` for `default_profile`; display its name, industry, and voice status.
+2. **All profiles** — list every file under `~/Documents/LinkedIn Post Studio/profiles/` (respect `data_location` override). For each: profile_id, name, industry, voice.status, whether it's the default.
+3. **Recent drafts** — list the last 5 files in `~/Documents/LinkedIn Post Studio/drafts/` sorted by modification date. For each: filename, format, status.
+4. **The 15 slash commands available:**
+   - `/linkedin-post-studio` — this help screen
+   - `/linkedin-onboard` — create or re-onboard a profile
+   - `/linkedin-profile` — manage profiles (list/switch/edit/delete/view)
+   - `/linkedin-post` — generate a text post
+   - `/linkedin-carousel` — generate a carousel brief
+   - `/linkedin-hooks` — 15 hook variations
+   - `/linkedin-companion` — 5 companion comment prompts
+   - `/linkedin-poll` — generate a poll
+   - `/linkedin-video` — 60–90s video script
+   - `/linkedin-newsletter` — newsletter edition + promo post
+   - `/linkedin-calendar` — content calendar (week or month)
+   - `/linkedin-qa` — QA review on an existing draft
+   - `/linkedin-mine` — mine post angles from a source
+   - `/linkedin-repurpose` — convert long-form content to LinkedIn assets
+   - `/linkedin-teardown` — analyze a viral post
+
+Also tell the user they can invoke any of these via natural language (e.g., "write me a LinkedIn post about X") — slash commands are shortcuts.
+
 ## Dispatch flow
 
 1. **Resolve active profile** (see Profile resolution below)

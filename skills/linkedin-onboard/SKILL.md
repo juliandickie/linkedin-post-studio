@@ -1,9 +1,11 @@
 ---
+name: linkedin-onboard
 description: Create a new LinkedIn Post Studio profile or re-onboard an existing one
+disable-model-invocation: true
 argument-hint: "[profile-name] [section]"
 ---
 
-Invoke the `linkedin-post-studio` skill to dispatch onboarding.
+Invoke the `linkedin-post-studio` orchestrator to dispatch onboarding.
 
 Inputs (positional):
 - `$1` — optional profile-name: if omitted, the wizard asks
@@ -11,10 +13,10 @@ Inputs (positional):
 
 Routing:
 
-- If `$2` is `voice` → dispatch to `skills/linkedin-post-studio/onboarding/voice-capture.md`
-- If `$2` is `compliance` → dispatch to `skills/linkedin-post-studio/onboarding/compliance-setup.md`
-- If `$2` is `audience` → resume `skills/linkedin-post-studio/onboarding/create-profile.md` at Step 3 (Collect audience)
-- Otherwise → dispatch to `skills/linkedin-post-studio/onboarding/create-profile.md` (full wizard)
+- If `$2` is `voice` → follow `../linkedin-post-studio/onboarding/voice-capture.md`
+- If `$2` is `compliance` → follow `../linkedin-post-studio/onboarding/compliance-setup.md`
+- If `$2` is `audience` → resume `../linkedin-post-studio/onboarding/create-profile.md` at Step 3 (Collect audience)
+- Otherwise → follow `../linkedin-post-studio/onboarding/create-profile.md` (full wizard)
 
 If `$1` is provided:
 - For full onboarding, use it as the proposed `profile_id`
