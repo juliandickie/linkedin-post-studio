@@ -5,7 +5,17 @@ Plugin release history. Follows [Keep a Changelog](https://keepachangelog.com/) 
 ## [Unreleased]
 
 ### Added
-- Initial v1.0 implementation in progress.
+- Installation guide: prominent "Restart required after install" section in README covering all four Claude surfaces (Desktop, Code, Web, Cowork), including a diagnostic check (empty `/linkedin-` auto-complete = restart needed).
+
+### Changed
+- Migrated 15 slash commands from legacy `commands/*.md` flat format to modern `skills/<name>/SKILL.md` directory format. Each command-style skill uses `disable-model-invocation: true` so natural-language triggers still flow through the orchestrator. Installation no longer surfaces the "legacy commands/ format" warning.
+- Absorbed the former `/linkedin-post-studio` help-screen behavior directly into the orchestrator's `SKILL.md` — it now shows a help/status screen when invoked with empty args, and dispatches normally when given a request.
+
+### Fixed
+- Plugin manifest moved to `.claude-plugin/plugin.json` (required by Claude Code loader).
+- All 15 slash commands converted from invalid `arguments:` array frontmatter to `argument-hint:` string, and from invalid `{{var}}` templating to `$1`/`$2`/`$ARGUMENTS` positional substitution.
+- Flattened `repository` manifest field from object to URL string.
+- Removed stray `.DS_Store` files.
 
 ## [1.0.0] — TBD
 

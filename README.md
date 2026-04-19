@@ -61,6 +61,17 @@ mkdir -p .claude/plugins/
 git clone https://github.com/juliandickie/linkedin-post-studio.git .claude/plugins/linkedin-post-studio
 ```
 
+### ⚠️ Restart required after install
+
+Claude loads plugins and skills at startup, not on the fly. **After installing (or updating) the plugin, restart your Claude surface** so the 15 slash commands and the skill show up:
+
+- **Claude Desktop** — fully quit the app (⌘Q on macOS) and relaunch
+- **Claude Code** (terminal) — exit your current session and start a new one
+- **Claude Web** — reload the browser tab
+- **Cowork** — restart the Cowork session
+
+If you install the plugin and type `/linkedin-` and see no auto-complete suggestions, you haven't restarted yet. After restart, typing `/linkedin-` should show all 15 commands, and natural language like "write me a LinkedIn post about pricing strategy" should trigger the orchestrator.
+
 ## First-time setup (5 minutes)
 
 On first invocation, the skill walks you through onboarding:
