@@ -1,20 +1,18 @@
 ---
 description: Repurpose long-form content (newsletter, blog, podcast/video transcript) into multiple LinkedIn assets
-arguments:
-  - name: source
-    description: Source content — URL, file path, or pasted long-form text
-    required: false
+argument-hint: "[source-path-or-url-or-text]"
 ---
 
 Invoke the `linkedin-post-studio` skill for content repurposing.
 
-Input: `{{source}}` — one of:
-- Pasted newsletter text
-- Blog post URL or file
-- Podcast transcript
-- Video transcript
-- Twitter thread
-- Book chapter
+Input:
+- `$ARGUMENTS` — source content — one of:
+  - Pasted newsletter text
+  - Blog post URL or file
+  - Podcast transcript
+  - Video transcript
+  - Twitter thread
+  - Book chapter
 
 Resolve the active profile.
 

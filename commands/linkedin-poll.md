@@ -1,15 +1,12 @@
 ---
 description: Generate a LinkedIn poll (3 options + "Other", 7-day duration)
-arguments:
-  - name: topic
-    description: The topic of the poll
-    required: false
+argument-hint: "[topic]"
 ---
 
 Invoke the `linkedin-post-studio` skill for poll generation.
 
-Inputs:
-- Topic: `{{topic}}` (if empty, ask)
+Input:
+- `$ARGUMENTS` — topic (if empty, ask)
 
 Resolve the active profile.
 

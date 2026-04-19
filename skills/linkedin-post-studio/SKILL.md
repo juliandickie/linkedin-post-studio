@@ -1,6 +1,6 @@
 ---
 name: linkedin-post-studio
-description: Use when the user wants to create LinkedIn content — text posts, carousels, hooks, polls, video scripts, newsletters, content calendars, companion comments, draft QA reviews, post teardowns, content repurposing from newsletters/blogs/transcripts, or post idea mining from external sources. Triggers on phrases like "write a LinkedIn post", "draft a carousel", "generate hooks for", "linkedin newsletter", "review my linkedin draft", "ideas for linkedin", "repurpose my newsletter", "analyze this viral post", "linkedin content calendar", "post for [name]", or any /linkedin-* slash command. Profile-driven with built-in defenses against AI slop and industry-specific compliance support.
+description: Use when the user wants to create LinkedIn content — text posts, carousels, hooks, polls, video scripts, newsletters, content calendars, companion comments, QA reviews, post teardowns, idea mining, or content repurposing. Triggers on phrases like "write a LinkedIn post", "draft a carousel", "generate hooks", "linkedin newsletter", "review my linkedin draft", "repurpose my newsletter", "analyze this viral post", "post for [name]", or any /linkedin-* slash command. Profile-driven with anti-AI-slop defenses and industry-specific compliance support.
 ---
 
 # LinkedIn Post Studio

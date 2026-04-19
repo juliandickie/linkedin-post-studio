@@ -1,23 +1,14 @@
 ---
 description: Generate a LinkedIn carousel brief (6–10 slides)
-arguments:
-  - name: topic
-    description: The topic for the carousel
-    required: false
-  - name: goal
-    description: "Override profile default goal: lead-gen | thought-leadership | brand-awareness | community"
-    required: false
-  - name: slides
-    description: Slide count (default 8; range 6–10)
-    required: false
+argument-hint: "[topic] [goal] [slides]"
 ---
 
 Invoke the `linkedin-post-studio` skill for carousel generation.
 
-Inputs:
-- Topic: `{{topic}}` (if empty, ask)
-- Goal override: `{{goal}}`
-- Slide count: `{{slides}}` (default 8)
+Inputs (positional):
+- `$1` — topic (if empty, ask)
+- `$2` — optional goal override: `lead-gen` | `thought-leadership` | `brand-awareness` | `community`
+- `$3` — optional slide count (default 8; range 6–10)
 
 Resolve the active profile via the standard algorithm.
 

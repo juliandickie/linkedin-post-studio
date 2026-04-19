@@ -1,17 +1,15 @@
 ---
 description: Analyze a viral LinkedIn post — structure, hook, framework, AI-slop score, ethics — and generate "your version"
-arguments:
-  - name: post
-    description: URL of a LinkedIn post OR pasted post text
-    required: false
+argument-hint: "[post-url-or-text]"
 ---
 
 Invoke the `linkedin-post-studio` skill for post teardown.
 
-Input: `{{post}}`
+Input:
+- `$ARGUMENTS` — URL of a LinkedIn post OR pasted post text
 
-- If URL → use WebFetch to retrieve (if allowed by config); otherwise ask the user to paste the text
-- If pasted text → process directly
+- If `$ARGUMENTS` is a URL → use WebFetch to retrieve (if allowed by config); otherwise ask the user to paste the text
+- If `$ARGUMENTS` is pasted text → process directly
 
 Resolve the active profile (the "your version" post uses the profile's voice).
 
