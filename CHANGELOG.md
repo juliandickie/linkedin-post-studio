@@ -4,7 +4,11 @@ Plugin release history. Follows [Keep a Changelog](https://keepachangelog.com/) 
 
 ## [Unreleased]
 
-_No unreleased changes._
+### Added
+
+- **Marketplace catalog** (`.claude-plugin/marketplace.json`) — the plugin repo now doubles as a single-plugin Claude Code marketplace named `idd-plugins`. Install with `/plugin marketplace add juliandickie/linkedin-post-studio` then `/plugin install linkedin-post-studio@idd-plugins`. Updates via `/plugin marketplace update idd-plugins` + `/plugin update linkedin-post-studio`.
+- README install section reorganized: marketplace install promoted to Option A; manual `git clone`, skill-only, and project-scoped install kept as Options B–D. Project-scoped section now also documents the `extraKnownMarketplaces` + `enabledPlugins` settings pattern for teams.
+- **Plugin icon** at `icon.png` (1024×1024 master) plus resized variants in `assets/icon-{512,256,128,64}.png` for use in the README and any future marketplace UI that supports plugin imagery. Icon is not declared in `plugin.json` because the current Claude Code plugin manifest schema doesn't define an icon field — it's surfaced via the README header for now.
 
 ## [1.0.0] — 2026-04-20
 

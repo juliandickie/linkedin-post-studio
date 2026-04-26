@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/icon-256.png" alt="LinkedIn Post Studio icon" width="128" height="128">
+</p>
+
 # LinkedIn Post Studio
 
 Profile-driven LinkedIn content generation built on a comprehensive 2025–2026 LinkedIn knowledge base. Generates text posts, carousels, hooks, polls, video scripts, newsletters, calendars, companion comments, and more — in YOUR voice, with built-in defenses against AI slop.
@@ -30,16 +34,42 @@ Profile-driven LinkedIn content generation built on a comprehensive 2025–2026 
 
 ## Installation
 
-### Option A — Full plugin (Claude Code / Desktop code mode / Cowork)
+### Option A — Marketplace install (recommended, Claude Code / Desktop code mode / Cowork)
+
+This repo ships its own Claude Code plugin marketplace, so you get one-line install and one-line updates:
+
+```bash
+# Inside Claude Code (or Desktop code mode / Cowork)
+/plugin marketplace add juliandickie/linkedin-post-studio
+/plugin install linkedin-post-studio@idd-plugins
+```
+
+To update later:
+
+```bash
+/plugin marketplace update idd-plugins
+/plugin update linkedin-post-studio
+```
+
+Both Claude Code commands also work in non-interactive mode from your shell:
+
+```bash
+claude plugin marketplace add juliandickie/linkedin-post-studio
+claude plugin install linkedin-post-studio@idd-plugins
+```
+
+### Option B — Manual git clone (Claude Code / Desktop code mode / Cowork)
+
+If you'd rather manage the install with `git` directly:
 
 ```bash
 cd ~/.claude/plugins/
 git clone https://github.com/juliandickie/linkedin-post-studio.git
 ```
 
-All 15 slash commands and the skill are auto-discovered.
+All 15 slash commands and the skill are auto-discovered. To update, `cd` into the cloned directory and `git pull`.
 
-### Option B — Skill only (Claude Web / Desktop chat mode)
+### Option C — Skill only (Claude Web / Desktop chat mode)
 
 ```bash
 # Copy the skill directory
@@ -51,7 +81,7 @@ ln -sfn "$(pwd)/linkedin-post-studio/skills/linkedin-post-studio" ~/.claude/skil
 
 No slash commands, but the skill triggers on natural language in any Claude surface.
 
-### Option C — Project-scoped (Claude Code only)
+### Option D — Project-scoped (Claude Code only)
 
 For users who want the plugin only for one project (e.g., an agency working on a single client):
 
@@ -59,6 +89,22 @@ For users who want the plugin only for one project (e.g., an agency working on a
 cd /path/to/your-project
 mkdir -p .claude/plugins/
 git clone https://github.com/juliandickie/linkedin-post-studio.git .claude/plugins/linkedin-post-studio
+```
+
+Or, project-scoped via the marketplace (auto-prompts teammates to install it when they trust the project):
+
+```jsonc
+// .claude/settings.json
+{
+  "extraKnownMarketplaces": {
+    "idd-plugins": {
+      "source": { "source": "github", "repo": "juliandickie/linkedin-post-studio" }
+    }
+  },
+  "enabledPlugins": {
+    "linkedin-post-studio@idd-plugins": true
+  }
+}
 ```
 
 ### ⚠️ Restart required after install

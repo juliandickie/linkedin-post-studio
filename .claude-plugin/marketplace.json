@@ -1,0 +1,42 @@
+{
+  "name": "idd-plugins",
+  "owner": {
+    "name": "Julian Dickie",
+    "email": "julian@instituteofdigitaldentistry.com"
+  },
+  "metadata": {
+    "description": "Plugins by Julian Dickie / Institute of Digital Dentistry. Currently ships LinkedIn Post Studio; future plugins for content creation and dental education will be added here.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "linkedin-post-studio",
+      "source": "./",
+      "description": "Profile-driven LinkedIn content generation — text posts, carousels, hooks, polls, video scripts, newsletters, calendars, companion comments, QA review, idea mining, content repurposing, and post teardowns. Built on a comprehensive 2025–2026 LinkedIn knowledge base, with built-in defenses against AI slop.",
+      "author": {
+        "name": "Julian Dickie",
+        "email": "julian@instituteofdigitaldentistry.com"
+      },
+      "homepage": "https://github.com/juliandickie/linkedin-post-studio",
+      "repository": "https://github.com/juliandickie/linkedin-post-studio",
+      "license": "MIT",
+      "category": "content-creation",
+      "keywords": [
+        "linkedin",
+        "content-marketing",
+        "ghostwriting",
+        "personal-branding",
+        "social-media",
+        "carousels",
+        "thought-leadership"
+      ],
+      "tags": [
+        "linkedin",
+        "content",
+        "marketing",
+        "writing",
+        "ghostwriter"
+      ]
+    }
+  ]
+}
